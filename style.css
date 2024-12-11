@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+:root{
+    --bgcolor: rgb(161, 248, 11);
+    --red: rgb(212, 18, 18);
+    --purple: rgb(27, 27, 215);
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(5, 5, 5);
+}
+
+.container{
+    width: 800px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 25px 40px 10px 40px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0.5);
+}
+
+.title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.container form{
+    padding: 30px 0px;
+}
+
+.row{
+    display: flex;
+    margin: 30px 0;
+}
+
+.form-group{
+    width: 100%;
+    margin: 0 20px;
+    height: 40px;
+    position: relative;
+}
+
+.textarea{
+    height: 70px;
+}
+
+.form-group input,
+.form-group textarea{
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.form-group textarea{
+    resize: none;
+    padding-top: 5px;
+}
+
+.form-group label{
+    position: absolute;
+    font-size: 16px;
+    bottom: 10px;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label{
+    transform: translateY(-20px);
+    color: var(--purple);
+    font-size: 14px;
+}
+
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label{
+    transform: translateY(-60px);
+    color: var(--purple);
+    font-size: 14px;
+}
+
+.underline{
+    width: 100%;
+    height: 2px;
+    background: var(--purple);
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: 0.3s ease;
+}
+
+.form-group input:focus ~ .underline,
+.form-group input:valid ~ .underline,
+.form-group textarea:focus ~ .underline,
+.form-group textarea:valid ~ .underline{
+    transform: scaleX(1);
+}
+
+input[type="submit"]{
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+}
+
+input:hover[type="submit"]{
+    background-color: var(--red);
+    border-radius: 10px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .form-group {
+        margin: 10px 0;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+    }
+}
